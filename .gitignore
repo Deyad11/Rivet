@@ -1,0 +1,5 @@
+venv/
+.env
+LEARNING.md
+.DS_Store
+__pycache__/
