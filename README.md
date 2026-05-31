@@ -1,9 +1,11 @@
-# Kintsugi
+# Rivet
 
-Repair broken AI coding workflows.
+Turn AI coding mistakes into permanent improvements.
 
-Kintsugi analyzes failed AI coding sessions and helps identify why they went wrong. It generates actionable instruction improvements that can be added to files like `CLAUDE.md` to make future sessions more reliable.
+Rivet helps developers learn from failed AI coding sessions by identifying the missing instructions, assumptions, and workflow gaps that led to the failure.
 
-Inspired by the Japanese art of Kintsugi (repairing broken pottery with gold), the project turns AI failures into reusable knowledge.
+Instead of repeatedly correcting the same mistakes, Rivet turns them into reusable knowledge that improves future AI-assisted development.
 
- Currently in early development.
+Every mistake is a lesson. Rivet helps you keep it.
+
+**Status:** Early development.
