@@ -1,6 +1,7 @@
 import os
 from google import genai
-
+from dotenv import load_dotenv  # Add this line
+load_dotenv()
 PROMPT_TEMPLATE= """
 You are analyzing a broken AI session to build or improve
 the user's personal AI guidelines file.
@@ -108,8 +109,8 @@ GUIDELINES FILE:
 # for now we check standard names only
 # KINTSUGI_GEMINI_API_KEY is ours, others are industry standard
 def get_api_key():
-    if os.environ.get("KINTSUGI_GEMINI_API_KEY"):
-        return ("gemini", os.environ.get("KINTSUGI_GEMINI_API_KEY"))
+    if os.environ.get("RIVET_GEMINI_API_KEY"):
+        return ("gemini", os.environ.get("RIVET_GEMINI_API_KEY"))
     if os.environ.get("ANTHROPIC_API_KEY"):
         return ("anthropic", os.environ.get("ANTHROPIC_API_KEY"))
     if os.environ.get("OPENAI_API_KEY"):
@@ -121,7 +122,6 @@ def diagnose(session_text, guidelines="NONE"):
     result = get_api_key()
     if result is None:
         raise Exception("No API key found. Set KINTSUGI_GEMINI_API_KEY, ANTHROPIC_API_KEY, or OPENAI_API_KEY in your environment.")
-    
     provider, key = result
     prompt = build_prompt(session_text, guidelines)
     client = genai.Client(api_key=key)
